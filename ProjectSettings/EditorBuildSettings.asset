@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MenuFeria.unity
+    guid: 5ca616ca8a5f0194083ce41e0cb38149
+  - enabled: 1
+    path: Assets/Scenes/ChurrosYPorras.unity
+    guid: a79b92264ebbf8247a1b4a41bddd24d3
+  - enabled: 1
+    path: Assets/Scenes/HorseRACEv1.unity
+    guid: 49e587b4944644c228254a21805477f3
+  - enabled: 1
+    path: Assets/Scenes/BlankAR.unity
+    guid: 6bdce89659816455b9f906fc62d19910
+  m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 9926d92c3cb2c6e4d92fe625ac802fe6,
+      type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 32d284db858750443a3574d53f4e676c,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 833be4d82886d7648aa3ad508a573a07,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: a360c476b461b45408156c6f53fa3d34,
+      type: 2}
