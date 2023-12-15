@@ -3469,9 +3469,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1325705894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd7a27ca136dd934c9e7263a83d43c61, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a5739a63343b9e4494abf12c77652c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalB: 12
+  currentScore: 0
+  scoreText: {fileID: 1936242119}
 --- !u!4 &1325705896
 Transform:
   m_ObjectHideFlags: 0
