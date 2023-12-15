@@ -34,7 +34,8 @@ public class GameManager : MonoBehaviour
          */
         if (totalB-- <= 1)
         {
-            SpawnConfetti sc = new SpawnConfetti();
+            //SpawnConfetti sc = new SpawnConfetti();
+            SpawnConfetti sc = gameObject.AddComponent<SpawnConfetti>();
             sc.Spawn();
             StartCoroutine(final(10));
   

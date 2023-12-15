@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Marcador : MonoBehaviour
+public  class Marcador : MonoBehaviour
 {
     public TextMeshProUGUI textoMarcador;
     public int score = 0;

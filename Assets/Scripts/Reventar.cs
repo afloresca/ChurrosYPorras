@@ -11,7 +11,6 @@ public class Reventar : MonoBehaviour
     {
         // Verificar si el objeto con el que colisionamos es la bala
 
-       // if (other.CompareTag("Bullet"))
        if (other.gameObject.name.Contains("RealBullet"))
         {
             // Destruir el globo que colisiona con la bala
