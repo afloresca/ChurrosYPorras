@@ -68,4 +68,11 @@ public class Timer : MonoBehaviour
     {
         tiempo = PlayerPrefs.GetFloat("TiempoGuardado", 0f);
     }
+
+    public float GetTiempoTranscurrido()
+    {
+        return tiempo;
+    }
+
 }
+
