@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NerfController : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class NerfController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) || Input.GetMouseButtonDown(1))
         {
             FireBullet();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("ChurrosYPorras");
         }
 
         if (Input.GetMouseButton(0))
