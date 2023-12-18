@@ -134,10 +134,7 @@ PlayerSettings:
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
   bundleVersion: 0.1.0
-  preloadedAssets:
-  - {fileID: -8458789441083458852, guid: 833be4d82886d7648aa3ad508a573a07, type: 2}
-  - {fileID: 11400000, guid: 32d284db858750443a3574d53f4e676c, type: 2}
-  - {fileID: 8228490762567424482, guid: a360c476b461b45408156c6f53fa3d34, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -914,7 +911,7 @@ PlayerSettings:
   embeddedLinuxEnableGamepadInput: 1
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
-  apiCompatibilityLevel: 6
+  apiCompatibilityLevel: 3
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 3720f621-69e3-4802-830a-723da580d5a4
