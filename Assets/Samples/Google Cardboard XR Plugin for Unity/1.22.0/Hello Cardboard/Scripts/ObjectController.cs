@@ -26,6 +26,7 @@ using UnityEngine.SceneManagement;
 public class ObjectController : MonoBehaviour
 {
     public bool esBotonDeInicio;
+    public RaceManager raceManager;
     public bool esBotonDeReinicio;
     private bool isGazingAt;
     private float gazeTimer;
@@ -126,9 +127,9 @@ public class ObjectController : MonoBehaviour
                 {
                     RestartRace(); // Reinicia la carrera si es el botón de reinicio
                 }
-                else if (gameObject.CompareTag("CambiaAFERIA01"))
+                else if (gameObject.CompareTag("CambiaAEscenaPrincipal"))
                 {
-                    SceneManager.LoadScene("FERIA01"); // Cambia a la escena "FERIA01"
+                    SceneManager.LoadScene("ChurrosYPorras"); // Cambia a la escena "ChurrosYPorras"
                 }
                 else if (gameObject.CompareTag("CambiaAEscenaPrincipal"))
                 {
@@ -170,7 +171,13 @@ public class ObjectController : MonoBehaviour
                 playerHorseControl.StartRace();
             }
         }
+
+        if (raceManager != null)
+        {
+            raceManager.BeginRace(); // Notifica a RaceManager que la carrera ha comenzado
+        }
     }
+
 
     private void RestartRace()
     {
@@ -191,18 +198,25 @@ public class ObjectController : MonoBehaviour
             }
         }
 
+        // Notifica a RaceManager que la carrera ha terminado y se reiniciará
+        if (raceManager != null)
+        {
+            raceManager.EndRace();
+        }
+
         // Aquí puedes añadir cualquier otra lógica necesaria para reiniciar la carrera
     }
 
 
-/// <summary>
-/// Sets this instance's material according to gazedAt status.
-/// </summary>
-///
-/// <param name="gazedAt">
-/// Value `true` if this object is being gazed at, `false` otherwise.
-/// </param>
-private void SetMaterial(bool gazedAt)
+
+    /// <summary>
+    /// Sets this instance's material according to gazedAt status.
+    /// </summary>
+    ///
+    /// <param name="gazedAt">
+    /// Value `true` if this object is being gazed at, `false` otherwise.
+    /// </param>
+    private void SetMaterial(bool gazedAt)
     {
         if (InactiveMaterial != null && GazedAtMaterial != null)
         {

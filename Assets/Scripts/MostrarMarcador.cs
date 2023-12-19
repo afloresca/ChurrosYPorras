@@ -1,11 +1,13 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
-public  class MostrarMarcador : MonoBehaviour
+public class MostrarMarcador : MonoBehaviour
 {
     public TMP_Text Marcador;
-    public int score = 0;
+    public int puntuacionActual;
+    private bool puntosDePetaGlobosAgregados = false; // Nueva variable
+    private bool puntosDeHuevosAgregados = false;
+    private bool puntosDeCarreraCaballosAgregados = false;
 
 
     void Start()
@@ -15,19 +17,36 @@ public  class MostrarMarcador : MonoBehaviour
 
     void Update()
     {
+        if (!puntosDePetaGlobosAgregados)
+        {
+            int pMinijuego1 = PlayerPrefs.GetInt("PuntuacionMinijuego1", 0);
 
+            // Puedes agregar lógica de actualización continua aquí si es necesario
+            puntuacionActual += pMinijuego1;
+            ActualizarMarcador(puntuacionActual);
+
+            // Marca los puntos de PetaGlobos como ya agregados
+            puntosDePetaGlobosAgregados = true;
+        }
     }
 
-    public void EstablecerPuntuacionInicial()
+    void EstablecerPuntuacionInicial()
     {
-        score = 50; // Establece la puntuación inicial que desees
-        ActualizarMarcador(); // Actualiza el marcador con la puntuación inicial
+        puntuacionActual = 0;
+        ActualizarMarcador(puntuacionActual);
     }
 
-
-    // Método para actualizar el marcador
-    public void ActualizarMarcador()
+    public void ActualizarMarcador(int nuevaPuntuacion)
     {
-        Marcador.text = score.ToString();
+        Marcador.text = nuevaPuntuacion.ToString();
+    }
+
+    public void RestarPuntuacion(int puntosPremio)
+    {
+        // Resta puntos a la puntuación actual
+        puntuacionActual -= puntosPremio;
+
+        // Actualiza el marcador después de restar puntos
+        ActualizarMarcador(puntuacionActual);
     }
 }

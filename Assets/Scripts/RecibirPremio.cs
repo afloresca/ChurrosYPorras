@@ -1,12 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RecibirPremio : MonoBehaviour
 {
-    public MostrarMarcador marcador;
-    public int puntosPremio;
-    public Timer timer;
+    public Marcador marcador;  // Asigna tu objeto de marcador desde el Inspector
+    public int puntosPremio;  // El costo del premio que se resta del marcador
 
     void Start()
     {
@@ -14,10 +12,6 @@ public class RecibirPremio : MonoBehaviour
         if (marcador == null)
         {
             Debug.LogError("El objeto de marcador no está asignado en el Inspector.");
-        }
-        else
-        {
-            marcador.EstablecerPuntuacionInicial(); // Llama al método para establecer la puntuación inicial
         }
     }
 
@@ -28,27 +22,12 @@ public class RecibirPremio : MonoBehaviour
         if (marcador.score >= puntosPremio)
         {
             // Resta el costo del premio del marcador
-            marcador.score -= puntosPremio;
-            marcador.ActualizarMarcador();
-            float tiempoTranscurrido = timer.GetTiempoTranscurrido();
-
-            Debug.Log($"Enhorabuena, disfruta de tu premio. Puntos restantes: {marcador.score}. Tiempo transcurrido: {tiempoTranscurrido} segundos.\nEl juego ha terminado, disfruta de la cerveza");
-            Invoke("TerminarJuego", 5f);
-
-
+            int nuevoPuntaje = marcador.score - puntosPremio;
+            marcador.ActualizarMarcador(nuevoPuntaje);
         }
         else
         {
-            Debug.Log("No tienes puntos suficientes para este premio. ¡ Sigue jugando ! ");
+            Debug.Log("No tienes puntos suficientes para este premio");
         }
     }
-
-    // Método para manejar el final del juego
-    void TerminarJuego()
-    {
-        Application.Quit();
-
-    }
-
-
 }
