@@ -21,7 +21,7 @@ public class MostrarMarcador : MonoBehaviour
         {
             int pMinijuego1 = PlayerPrefs.GetInt("PuntuacionMinijuego1", 0);
 
-            // Puedes agregar lógica de actualización continua aquí si es necesario
+
             puntuacionActual += pMinijuego1;
             ActualizarMarcador(puntuacionActual);
 
