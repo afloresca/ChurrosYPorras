@@ -2,18 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class RaceManager : MonoBehaviour
 {
     private List<string> orderOfArrival = new List<string>();
-    public Marcador marcador; // Referencia al script del marcador
+    public MarcadorCaballos marcadorCaballos; // Referencia al script del marcador
     private int totalHorses; // Total de caballos en la carrera
 
+    // Este es el método Start donde debes incluir el código
     private void Start()
     {
-        // Inicializa totalHorses con el número de caballos que participan
+        // Calcula el número total de caballos en la carrera
         totalHorses = FindObjectsOfType<AIAHorseControl>().Length + FindObjectsOfType<PlayerHorseControl2>().Length;
+        UnityEngine.Debug.Log("Total de caballos en la carrera: " + totalHorses);
+
+        // Otra lógica de inicialización si es necesaria
     }
 
     public void BeginRace()
@@ -21,19 +25,27 @@ public class RaceManager : MonoBehaviour
         // Lógica para manejar el inicio de la carrera
         // Reinicia la lista de orden de llegada para una nueva carrera
         orderOfArrival.Clear();
+        {
+            orderOfArrival.Clear();
+            UnityEngine.Debug.Log("Comenzando una nueva carrera. Lista de orden de llegada limpiada.");
+            // Otras acciones al comenzar la carrera
+        }
     }
+
 
     public void RecordFinish(string horseName)
     {
         orderOfArrival.Add(horseName);
+        UnityEngine.Debug.Log("Caballo registrado: " + horseName + ". Posición: " + orderOfArrival.Count);
 
         // Verifica si todos los caballos han llegado
         if (orderOfArrival.Count == totalHorses)
         {
-            // Todos los caballos han llegado, la carrera ha terminado
+            UnityEngine.Debug.Log("Todos los caballos han llegado. Fin de la carrera.");
             UpdateScores();
         }
     }
+
 
     private void UpdateScores()
     {
@@ -44,7 +56,7 @@ public class RaceManager : MonoBehaviour
             {
                 int points = CalculatePoints(i + 1);
                 UnityEngine.Debug.Log("Asignando " + points + " puntos al caballo del jugador");
-                marcador.ActualizarMarcador(marcador.score + points); // Asegúrate de que se suman los puntos
+                marcadorCaballos.AgregarPuntos(points); // Utiliza el método para agregar puntos
                 break; // Sale del bucle una vez que se encuentra y actualiza el caballo del jugador
             }
         }
@@ -56,19 +68,25 @@ public class RaceManager : MonoBehaviour
     {
         switch (position)
         {
-            case 1: return 10;
-            case 2: return 8;
-            case 3: return 6;
-            case 4: return 4;
-            default: return 2;
+            case 1: return 120;
+            case 2: return 60;
+            case 3: return 30;
+            case 4: return 15;
+            default: return 60;
         }
     }
 
     public void EndRace()
     {
-        // Lógica para manejar el final de la carrera
-        // Aquí podrías realizar cualquier limpieza o preparación para una nueva carrera
+        {
+            PlayerPrefs.SetInt("PuntuacionMinijuego2", marcadorCaballos.score);
+            UnityEngine.Debug.Log("Finalizando la carrera actual.");
+            SceneManager.LoadScene("ChurrosYPorras");
+
+        }
     }
+
+
 }
 
 

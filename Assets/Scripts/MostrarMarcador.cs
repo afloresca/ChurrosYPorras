@@ -5,8 +5,7 @@ public class MostrarMarcador : MonoBehaviour
 {
     public TMP_Text Marcador;
     public int puntuacionActual;
-    private bool puntosDePetaGlobosAgregados = false; // Nueva variable
-    private bool puntosDeHuevosAgregados = false;
+    private bool puntosDePetaGlobosAgregados = false;
     private bool puntosDeCarreraCaballosAgregados = false;
 
 
@@ -28,6 +27,18 @@ public class MostrarMarcador : MonoBehaviour
             // Marca los puntos de PetaGlobos como ya agregados
             puntosDePetaGlobosAgregados = true;
         }
+
+        if (!puntosDeCarreraCaballosAgregados)
+        {
+            int pMinijuego2 = PlayerPrefs.GetInt("PuntuacionMinijuego2", 0);
+
+
+            puntuacionActual += pMinijuego2;
+            ActualizarMarcador(puntuacionActual);
+
+            // Marca los puntos de PetaGlobos como ya agregados
+            puntosDeCarreraCaballosAgregados = true;
+        }
     }
 
     void EstablecerPuntuacionInicial()
@@ -48,5 +59,6 @@ public class MostrarMarcador : MonoBehaviour
 
         // Actualiza el marcador después de restar puntos
         ActualizarMarcador(puntuacionActual);
+
     }
 }
