@@ -3,11 +3,10 @@ using TMPro;
 
 public class MostrarMarcador : MonoBehaviour
 {
-    public TMP_Text Marcador;
+    public TMP_Text marcador;
     public int puntuacionActual;
     private bool puntosDePetaGlobosAgregados = false;
     private bool puntosDeCarreraCaballosAgregados = false;
-
 
     void Start()
     {
@@ -16,29 +15,22 @@ public class MostrarMarcador : MonoBehaviour
 
     void Update()
     {
+        int pMinijuego1 = PlayerPrefs.GetInt("PuntuacionMinijuego1", 0);
+        int pMinijuego2 = PlayerPrefs.GetInt("PuntuacionMinijuego2", 0);
+
         if (!puntosDePetaGlobosAgregados)
         {
-            int pMinijuego1 = PlayerPrefs.GetInt("PuntuacionMinijuego1", 0);
-
-
             puntuacionActual += pMinijuego1;
-            ActualizarMarcador(puntuacionActual);
-
-            // Marca los puntos de PetaGlobos como ya agregados
             puntosDePetaGlobosAgregados = true;
         }
 
         if (!puntosDeCarreraCaballosAgregados)
         {
-            int pMinijuego2 = PlayerPrefs.GetInt("PuntuacionMinijuego2", 0);
-
-
             puntuacionActual += pMinijuego2;
-            ActualizarMarcador(puntuacionActual);
-
-            // Marca los puntos de PetaGlobos como ya agregados
             puntosDeCarreraCaballosAgregados = true;
         }
+
+        ActualizarMarcador(puntuacionActual);
     }
 
     void EstablecerPuntuacionInicial()
@@ -49,7 +41,7 @@ public class MostrarMarcador : MonoBehaviour
 
     public void ActualizarMarcador(int nuevaPuntuacion)
     {
-        Marcador.text = nuevaPuntuacion.ToString();
+        marcador.text = nuevaPuntuacion.ToString();
     }
 
     public void RestarPuntuacion(int puntosPremio)

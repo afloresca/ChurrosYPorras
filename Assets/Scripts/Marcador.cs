@@ -14,12 +14,5 @@ public class Marcador : MonoBehaviour
         textoMarcador.text = score.ToString(); // Actualiza el texto del marcador
     }
 
-    public void ActualizarMarcador2(int puntosGanados)
-    {
-        Debug.Log("Actualizando marcador con: " + puntosGanados); // Verificar los puntos recibidos
-        score += puntosGanados;
-        textoMarcador.text = score.ToString();
-    }
-
 }
 

@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator Final(int seg)
+    IEnumerator Final(float seg)
     {
         // Guardar la puntuación acumulativa en PlayerPrefs
         PlayerPrefs.SetInt("PuntuacionMinijuego1", currentScore);
@@ -60,8 +60,9 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(tiempoDeEspera);
 
-        // Cierra la aplicación después de esperar unos segundos
-        Application.Quit();
+        // Cambia a la escena "ChurrosYPorras" después de esperar unos segundos
+        StartCoroutine(Final(0f));
     }
+
 }
 

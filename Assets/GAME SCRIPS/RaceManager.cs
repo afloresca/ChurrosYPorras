@@ -9,6 +9,7 @@ public class RaceManager : MonoBehaviour
     private List<string> orderOfArrival = new List<string>();
     public MarcadorCaballos marcadorCaballos; // Referencia al script del marcador
     private int totalHorses; // Total de caballos en la carrera
+    private int puntosTotales = 0;
 
     // Este es el método Start donde debes incluir el código
     private void Start()
@@ -47,7 +48,7 @@ public class RaceManager : MonoBehaviour
     }
 
 
-    private void UpdateScores()
+    public void UpdateScores()
     {
         for (int i = 0; i < orderOfArrival.Count; i++)
         {
@@ -79,11 +80,29 @@ public class RaceManager : MonoBehaviour
     public void EndRace()
     {
         {
-            PlayerPrefs.SetInt("PuntuacionMinijuego2", marcadorCaballos.score);
+            puntosTotales = marcadorCaballos.ObtenerPuntajeActual();
+
             UnityEngine.Debug.Log("Finalizando la carrera actual.");
-            SceneManager.LoadScene("ChurrosYPorras");
+
+            StartCoroutine(CerrarJuegoDespuesDeEspera(5f));
 
         }
+    }
+
+    IEnumerator Final(float seg)
+    {
+         // Guardar la puntuación acumulativa en PlayerPrefs
+        PlayerPrefs.SetInt("PuntuacionMinijuego2", puntosTotales);
+        yield return new WaitForSeconds(seg);
+        SceneManager.LoadScene("ChurrosYPorras");
+    }
+
+    IEnumerator CerrarJuegoDespuesDeEspera(float tiempoDeEspera)
+    {
+        yield return new WaitForSeconds(tiempoDeEspera);
+
+        // Cambia a la escena "ChurrosYPorras" después de esperar unos segundos
+        StartCoroutine(Final(0f));
     }
 
 

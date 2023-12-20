@@ -3092,7 +3092,7 @@ PrefabInstance:
     - target: {fileID: 4736824462062461832, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_Text
-      value: "Bono 30\u20AC Asset Store\n50 puntos"
+      value: "Bono 30\u20AC Asset Store\n75 puntos"
       objectReference: {fileID: 0}
     - target: {fileID: 4736824462062461832, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
@@ -3990,7 +3990,7 @@ PrefabInstance:
       propertyPath: m_Text
       value: 'VR Oculus QUEST
 
-        100 puntos'
+        200 puntos'
       objectReference: {fileID: 0}
     - target: {fileID: 4736824462062461832, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
@@ -5004,7 +5004,7 @@ PrefabInstance:
       propertyPath: m_Text
       value: 'Smartphone 8" VR
 
-        75 puntos'
+        150 puntos'
       objectReference: {fileID: 0}
     - target: {fileID: 4736824462062461832, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
@@ -5382,7 +5382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848739a3c5f24b949a3b94a4b12aecc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Marcador: {fileID: 1796346973}
+  marcador: {fileID: 1796346973}
   puntuacionActual: 0
 --- !u!4 &599499689
 Transform:
@@ -5393,11 +5393,11 @@ Transform:
   m_GameObject: {fileID: 599499687}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 497.1209, y: -108.620445, z: 452.50076}
+  m_LocalPosition: {x: 839.3709, y: -29.62046, z: 452.50076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1081329124}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &709366884
 PrefabInstance:
@@ -6582,13 +6582,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943894529}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.040450994, y: 0.9759015, z: -0.19020282, w: -0.09901012}
-  m_LocalPosition: {x: -16.1, y: -5.1, z: 17.01}
+  m_LocalRotation: {x: 0.48848772, y: 0.5466499, z: -0.61949646, w: 0.2806739}
+  m_LocalPosition: {x: -15.57, y: 6.9, z: 12.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 21.299, y: 192.94, z: 7.19}
+  m_LocalEulerAnglesHint: {x: 72.084, y: 255.91, z: 142.725}
 --- !u!114 &943894532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7117,10 +7117,9 @@ RectTransform:
   m_Children:
   - {fileID: 1352728248}
   - {fileID: 1862889164}
-  - {fileID: 599499689}
+  - {fileID: 1796346972}
   - {fileID: 202316409}
   - {fileID: 975369769}
-  - {fileID: 1796346972}
   - {fileID: 1796214723}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8033,7 +8032,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1932546170}
+      objectReference: {fileID: 909763019}
     - target: {fileID: 5419331889293473514, guid: 76f3439a0ae796e4b81bee3f91f888ee,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -11245,7 +11244,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1932546164}
+      objectReference: {fileID: 1932546170}
     - target: {fileID: 5419331889293473514, guid: 76f3439a0ae796e4b81bee3f91f888ee,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -11264,7 +11263,7 @@ PrefabInstance:
     - target: {fileID: 5419331889293473514, guid: 76f3439a0ae796e4b81bee3f91f888ee,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: 
+      value: OnBotonPremiosClick
       objectReference: {fileID: 0}
     - target: {fileID: 5419331889293473514, guid: 76f3439a0ae796e4b81bee3f91f888ee,
         type: 3}
@@ -13144,3 +13143,4 @@ SceneRoots:
   - {fileID: 2060080913}
   - {fileID: 1081329124}
   - {fileID: 267570828}
+  - {fileID: 599499689}
