@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/HorseRACEv1.unity
     guid: 49e587b4944644c228254a21805477f3
   - enabled: 0
-    path: Assets/Scenes/BlankAR.unity
+    path: Assets/Scenes/Huevos.unity
     guid: 6bdce89659816455b9f906fc62d19910
   - enabled: 1
     path: Assets/Scenes/PetaGlobos.unity
