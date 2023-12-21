@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18386671, g: 0.22870465, b: 0.30133042, a: 1}
+  m_IndirectSpecularColor: {r: 0.18386687, g: 0.22870512, b: 0.30133075, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1969,7 +1969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   esBotonDeInicio: 1
-  raceManager: {fileID: 0}
+  raceManager: {fileID: 402819169}
   esBotonDeReinicio: 0
   gazeTimeThreshold: 2
   horses:
@@ -2120,7 +2120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcfcc4e36e51c4a50ad748847aef25c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Marcador: {fileID: 402819168}
+  marcadorCaballos: {fileID: 402819168}
 --- !u!1 &422906907
 GameObject:
   m_ObjectHideFlags: 0

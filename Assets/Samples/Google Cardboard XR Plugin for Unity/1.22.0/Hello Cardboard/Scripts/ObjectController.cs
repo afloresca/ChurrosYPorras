@@ -181,6 +181,8 @@ public class ObjectController : MonoBehaviour
 
     private void RestartRace()
     {
+        Debug.Log("Reiniciando la carrera.");
+
         foreach (GameObject horse in horses)
         {
             // Restablecer la posición de los caballos controlados por IA
@@ -202,6 +204,7 @@ public class ObjectController : MonoBehaviour
         if (raceManager != null)
         {
             raceManager.EndRace();
+            Debug.Log("Llamada a EndRace realizada.");
         }
 
         // Aquí puedes añadir cualquier otra lógica necesaria para reiniciar la carrera

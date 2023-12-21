@@ -44,6 +44,7 @@ public class RaceManager : MonoBehaviour
         {
             UnityEngine.Debug.Log("Todos los caballos han llegado. Fin de la carrera.");
             UpdateScores();
+            EndRace(); // Llamada a EndRace aquí
         }
     }
 
@@ -79,32 +80,26 @@ public class RaceManager : MonoBehaviour
 
     public void EndRace()
     {
-        {
-            puntosTotales = marcadorCaballos.ObtenerPuntajeActual();
+        puntosTotales = marcadorCaballos.ObtenerPuntajeActual();
+        UnityEngine.Debug.Log("Finalizando la carrera actual. Puntos totales: " + puntosTotales);
 
-            UnityEngine.Debug.Log("Finalizando la carrera actual.");
-
-            StartCoroutine(CerrarJuegoDespuesDeEspera(5f));
-
-        }
-    }
-
-    IEnumerator Final(float seg)
-    {
-         // Guardar la puntuación acumulativa en PlayerPrefs
+        // Guardar la puntuación acumulativa en PlayerPrefs
         PlayerPrefs.SetInt("PuntuacionMinijuego2", puntosTotales);
-        yield return new WaitForSeconds(seg);
-        SceneManager.LoadScene("ChurrosYPorras");
+        UnityEngine.Debug.Log("Puntuación guardada en PlayerPrefs: " + PlayerPrefs.GetInt("PuntuacionMinijuego2"));
+
+        // Prepararse para cambiar de escena
+        StartCoroutine(CambiarDeEscenaDespuesDeEspera(15f));
+        UnityEngine.Debug.Log("Preparando para cambiar de escena en 5 segundos.");
     }
 
-    IEnumerator CerrarJuegoDespuesDeEspera(float tiempoDeEspera)
+    IEnumerator CambiarDeEscenaDespuesDeEspera(float tiempoDeEspera)
     {
         yield return new WaitForSeconds(tiempoDeEspera);
 
         // Cambia a la escena "ChurrosYPorras" después de esperar unos segundos
-        StartCoroutine(Final(0f));
+        UnityEngine.Debug.Log("Cambiando a la escena 'ChurrosYPorras'.");
+        SceneManager.LoadScene("ChurrosYPorras");
     }
-
 
 }
 
