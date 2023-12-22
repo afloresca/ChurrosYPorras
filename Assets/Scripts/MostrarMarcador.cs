@@ -7,6 +7,7 @@ public class MostrarMarcador : MonoBehaviour
     public int puntuacionActual;
     private bool puntosDePetaGlobosAgregados = false;
     private bool puntosDeCarreraCaballosAgregados = false;
+    private bool puntosDeHuevosAgregados = false;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class MostrarMarcador : MonoBehaviour
     {
         int pMinijuego1 = PlayerPrefs.GetInt("PuntuacionMinijuego1", 0);
         int pMinijuego2 = PlayerPrefs.GetInt("PuntuacionMinijuego2", 0);
+        int pMinijuego3 = PlayerPrefs.GetInt("PuntuacionMinijuego3", 0);
 
         if (!puntosDePetaGlobosAgregados)
         {
@@ -29,6 +31,14 @@ public class MostrarMarcador : MonoBehaviour
             puntuacionActual += pMinijuego2;
             puntosDeCarreraCaballosAgregados = true;
         }
+
+        if (!puntosDeHuevosAgregados)
+        {
+        puntuacionActual += pMinijuego3;
+        puntosDeHuevosAgregados = true;
+        }
+
+    ActualizarMarcador(puntuacionActual);
 
         ActualizarMarcador(puntuacionActual);
     }
@@ -46,10 +56,10 @@ public class MostrarMarcador : MonoBehaviour
 
     public void RestarPuntuacion(int puntosPremio)
     {
-        // Resta puntos a la puntuación actual
+        // Resta puntos a la puntuaciï¿½n actual
         puntuacionActual -= puntosPremio;
 
-        // Actualiza el marcador después de restar puntos
+        // Actualiza el marcador despuï¿½s de restar puntos
         ActualizarMarcador(puntuacionActual);
 
     }

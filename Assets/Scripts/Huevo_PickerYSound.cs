@@ -25,6 +25,7 @@ public class DesaparecerAlTocar : MonoBehaviour
         }
     }
 
+
 private void OnMouseDown()
 {
     Debug.Log("Huevo tocado");  // Verifica si este mensaje aparece en la consola al tocar un huevo
@@ -54,12 +55,31 @@ private void OnMouseDown()
     }
 
     // Llama a DesaparecerObjeto después de un breve retraso (ajusta según sea necesario)
-    Invoke("DesaparecerObjeto", 0.4f);
+    Invoke("DesaparecerObjeto", 0.3f);
 }
 
-private void DesaparecerObjeto()
-{
-    // Oculta el objeto al que está adjunto este script
-    gameObject.SetActive(false);
-}
+    private void DesaparecerObjeto()
+    {
+        // Oculta el objeto al que está adjunto este script
+        gameObject.SetActive(false);
+
+        // Llama a ReaparecerObjeto después de 2 segundos
+        Invoke("ReaparecerObjeto", 2f);
+    }
+
+    private void ReaparecerObjeto()
+    {
+        // Reactiva el objeto después de 2 segundos
+        gameObject.SetActive(true);
+
+        // Reposiciona el objeto de manera aleatoria en un margen de 1 unidad en las coordenadas X, Y y Z
+        Vector3 nuevaPosicion = new Vector3(
+            transform.position.x + Random.Range(-1f, 1f),
+            transform.position.y + Random.Range(-1f, 1f),
+            transform.position.z + Random.Range(-1f, 1f)
+        );
+
+        // Aplica la nueva posición al objeto
+        transform.position = nuevaPosicion;
+    }
 }
