@@ -13,21 +13,22 @@ public class CambioEscena : MonoBehaviour
 
         if (string.IsNullOrEmpty(nombre))
         {
-            Debug.LogError("El nombre no puede estar vacío.");
+            Debug.LogError("El nombre no puede estar vacÃ­o.");
             return;
         }
-
-        // Almacena el nombre en PlayerPrefs
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        //Almacena el nombre en playersPref
         PlayerPrefs.SetString("NombreJugador", nombre);
 
         // Cambia a la siguiente escena
         SceneManager.LoadScene("ChurrosYPorras");
     }
 
-    // Método para mostrar mensajes de advertencia (opcional)
+    // MÃ©todo para mostrar mensajes de advertencia (opcional)
     private void MostrarMensaje(string mensaje)
     {
         Debug.Log("Mensaje de advertencia: " + mensaje);
-        // Puedes implementar aquí la lógica para mostrar un mensaje en tu UI, activar un objeto Canvas, etc.
+        // Puedes implementar aquÃ­ la lÃ³gica para mostrar un mensaje en tu UI, activar un objeto Canvas, etc.
     }
 }
