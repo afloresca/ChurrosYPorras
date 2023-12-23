@@ -1,33 +1,39 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
+using System.Collections; // Agrega esta línea para usar IEnumerator
 
 public class RecibirPremio : MonoBehaviour
 {
-    public Marcador marcador;  // Asigna tu objeto de marcador desde el Inspector
-    public int puntosPremio;  // El costo del premio que se resta del marcador
+    public MostrarMarcador marcador;
+    public int puntosPremio = 0;
 
-    void Start()
-    {
-        // Asegúrate de que el marcador esté asignado
-        if (marcador == null)
-        {
-            Debug.LogError("El objeto de marcador no está asignado en el Inspector.");
-        }
-    }
-
-    // Método que se llama cuando se presiona el botón
     public void OnBotonPremiosClick()
     {
-        // Verifica si el jugador tiene suficientes puntos para el premio
-        if (marcador.score >= puntosPremio)
+        if (marcador.puntuacionActual >= puntosPremio)
         {
-            // Resta el costo del premio del marcador
-            int nuevoPuntaje = marcador.score - puntosPremio;
-            marcador.ActualizarMarcador(nuevoPuntaje);
+            marcador.RestarPuntuacion(puntosPremio);
+
+
+            Debug.Log($"Enhorabuena, disfruta de tu premio. Puntos restantes: {marcador.puntuacionActual}.\nEl juego ha terminado");
+
+            SpawnConfetti sc = gameObject.AddComponent<SpawnConfetti>();
+            sc.Spawn();
+            // Cierra la aplicación después de unos segundos
+            StartCoroutine(CerrarJuegoDespuesDeEspera(5f));
         }
         else
         {
-            Debug.Log("No tienes puntos suficientes para este premio");
+            Debug.Log("No tienes puntos suficientes para este premio. ¡Sigue jugando!");
         }
+    }
+
+   
+    IEnumerator CerrarJuegoDespuesDeEspera(float tiempoDeEspera)
+    {
+        yield return new WaitForSeconds(tiempoDeEspera);
+
+        // Cierra la aplicación después de esperar unos segundos
+        Application.Quit();
     }
 }

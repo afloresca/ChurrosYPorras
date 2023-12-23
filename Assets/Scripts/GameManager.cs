@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -10,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     public int totalB = 12;
     public int currentScore = 0;
-    public Text scoreText; // Referencia al texto en pantalla para mostrar la puntuación
+    public Text scoreText;
 
     private void Awake()
     {
@@ -29,17 +28,15 @@ public class GameManager : MonoBehaviour
     {
         currentScore += score;
         UpdateScoreText();
-        /*
-         * Aquí podrías añadir efectos de sonido, animaciones, etc., relacionados con obtener puntos.
-         * Por ejemplo Cuando llega se ha cargado todos los globos salen confetis y espera 10 segundos
-         */
+
         if (totalB-- <= 1)
         {
-            //SpawnConfetti sc = new SpawnConfetti();
+            // Aquí podrías añadir efectos de sonido, animaciones, etc., relacionados con obtener puntos.
+            // Por ejemplo, cuando se han cargado todos los globos, salen confetis y esperas 10 segundos.
+            // SpawnConfetti sc = new SpawnConfetti();
             SpawnConfetti sc = gameObject.AddComponent<SpawnConfetti>();
             sc.Spawn();
-            StartCoroutine(final(10));
-  
+            StartCoroutine(CerrarJuegoDespuesDeEspera(5f));
         }
     }
 
@@ -51,9 +48,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator final(int seg)
+    IEnumerator Final(float seg)
     {
+        // Guardar la puntuación acumulativa en PlayerPrefs
+        PlayerPrefs.SetInt("PuntuacionMinijuego1", currentScore);
         yield return new WaitForSeconds(seg);
         SceneManager.LoadScene("ChurrosYPorras");
     }
+
+    IEnumerator CerrarJuegoDespuesDeEspera(float tiempoDeEspera)
+    {
+        yield return new WaitForSeconds(tiempoDeEspera);
+
+        // Cambia a la escena "ChurrosYPorras" después de esperar unos segundos
+        StartCoroutine(Final(0f));
+    }
+
 }
+
