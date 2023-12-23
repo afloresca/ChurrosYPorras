@@ -5,19 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MenuFeria.unity
     guid: 5ca616ca8a5f0194083ce41e0cb38149
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ChurrosYPorras.unity
     guid: a79b92264ebbf8247a1b4a41bddd24d3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/HorseRACEv1.unity
     guid: 49e587b4944644c228254a21805477f3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/BlankAR.unity
     guid: 6bdce89659816455b9f906fc62d19910
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/PetaGlobos.unity
     guid: c440ff4a890ab7f4eb57b45ca3bd07fe
   m_configObjects:
