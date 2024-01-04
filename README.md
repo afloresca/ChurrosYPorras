@@ -91,8 +91,8 @@ Uso de IA para generar diálogos que ayudan en la inmersión para mejorar la exp
 
 [Enlace al Repositorio](https://github.com/afloresca/ChurrosYPorras)
 
-<!-- 
-INSERTAR AQUÍ EL VÍDEO:
-[![Alt Text](https://img.youtube.com/vi/HQ0TmO8ZA4o/0.jpg)](https://www.youtube.com/watch?v=HQ0TmO8ZA4o) -->
+## Video demostración 🎞️
+
+[![Ver en YouTube](https://img.youtube.com/vi/ixN2bcRm1xM/0.jpg)](https://www.youtube.com/watch?v=ixN2bcRm1xM)
 
 
