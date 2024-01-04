@@ -36,7 +36,7 @@ Este repositorio es una compilación de mini juegos desarrollados en Unity utili
 
 
 ##  🐎 El Gran Nacional (VR)
-<img src="/images/04_caballos.jpg" alt="04_caballos" width="500"/>
+<img src="/images/04_caballos2.jpg" alt="04_caballos2" width="500"/>
 <img src="/images/04_caballos_1.jpg" alt="04_caballos_1" width="500"/>
 
 
@@ -51,7 +51,7 @@ Este repositorio es una compilación de mini juegos desarrollados en Unity utili
 
 ## 🦕 Huevos de Dragón Colin (AR)
 <img src="/images/05_huevos_1.jpg" alt="05_huevos_1" width="500"/>
-<img src="/images/05_huevos.jpg" alt="05_huevos" width="500"/>
+<img src="/images/05_huevos2.jpg" alt="05_huevos2" width="500"/>
 
 - Descripción: Juego de realidad aumentada para encontrar y recoger huevos de dragón.
 
