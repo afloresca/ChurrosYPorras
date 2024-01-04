@@ -4,6 +4,7 @@
 Este repositorio es una compilación de mini juegos desarrollados en Unity utilizando C#, aprovechando las tecnologías de Realidad Virtual (VR) y Aumentada (AR). Todos los juegos están integrados en un entorno central conocido como la Feria, que sirve como menú principal.
 
 ## 🎡 Menú Principal: Feria
+<img src="/images/02_feria_1.jpg" alt="02_feria_1" width="500"/>
 <img src="/images/02_feria.jpg" alt="02_feria" width="500"/>
 
 ### Historia 
@@ -22,6 +23,7 @@ Este repositorio es una compilación de mini juegos desarrollados en Unity utili
 
 
 ## 🎈 PetaGlobos (VR)
+<img src="/images/03_petaglobos_1.jpg" alt="03_petaglobos_1" width="500"/>
 <img src="/images/03_petaglobos.jpg" alt="03_petaglobos" width="500"/>
 
 - Descripción: Juego de disparar globos en un entorno de Realidad Aumentada.
@@ -34,7 +36,10 @@ Este repositorio es una compilación de mini juegos desarrollados en Unity utili
 
 
 ##  🐎 El Gran Nacional (VR)
-<img src="/images/04_caballos.jpg" alt="04_caballos" width="500"/>-
+<img src="/images/04_caballos.jpg" alt="04_caballos" width="500"/>
+<img src="/images/04_caballos_1.jpg" alt="04_caballos_1" width="500"/>
+
+
 - Descripción: Carrera de caballos en Realidad Virtual con controles basados en puntería.
 
 - Tecnología: Unity con soporte para VR.
@@ -45,6 +50,7 @@ Este repositorio es una compilación de mini juegos desarrollados en Unity utili
 
 
 ## 🦕 Huevos de Dragón Colin (AR)
+<img src="/images/05_huevos_1.jpg" alt="05_huevos_1" width="500"/>
 <img src="/images/05_huevos.jpg" alt="05_huevos" width="500"/>
 
 - Descripción: Juego de realidad aumentada para encontrar y recoger huevos de dragón.
